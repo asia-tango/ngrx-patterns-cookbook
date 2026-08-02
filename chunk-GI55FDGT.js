@@ -1,0 +1,1 @@
+import{Sb as o,Tb as p}from"./chunk-XZDBAT5O.js";var a=p({source:"Approval Workflow",events:{"Load Approvals":o(),"Load Approvals Success":o(),"Load Approvals Failure":o(),"Approve Contract":o(),"Approve Contract Success":o(),"Approve Contract Failure":o()}});export{a};
