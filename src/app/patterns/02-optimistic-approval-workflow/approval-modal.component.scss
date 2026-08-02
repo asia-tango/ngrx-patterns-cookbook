@@ -1,0 +1,90 @@
+.pattern-page {
+  padding: 24px;
+  max-width: 640px;
+}
+
+.hint {
+  color: #666;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+code {
+  background: #f0f0f0;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.approval-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+.approval-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  transition: opacity 0.2s;
+}
+
+.approval-list li.saving {
+  opacity: 0.6;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.name {
+  font-weight: 500;
+}
+
+.amount {
+  font-size: 13px;
+  color: #666;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.status.pending { background: #fef3c7; color: #92400e; }
+.status.approved { background: #d1fae5; color: #065f46; }
+.status.rejected { background: #fee2e2; color: #991b1b; }
+
+button {
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.error {
+  width: 100%;
+  color: #b91c1c;
+  font-size: 12px;
+  margin: 4px 0 0;
+}

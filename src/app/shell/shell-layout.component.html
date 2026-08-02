@@ -1,0 +1,25 @@
+<div class="shell">
+  <nav class="sidebar">
+    <h1>NgRx Patterns<br />Cookbook</h1>
+    <ul>
+      @for (p of patterns; track p.path) {
+        <li>
+          @if (p.status === 'ready') {
+            <a [routerLink]="p.path" routerLinkActive="active">{{ p.label }}</a>
+          } @else {
+            <span class="planned">{{ p.label }} <em>(soon)</em></span>
+          }
+        </li>
+      }
+    </ul>
+    <a class="repo-link" href="https://github.com/YOUR_USERNAME/ngrx-patterns-cookbook" target="_blank">
+      ↳ GitHub repo
+    </a>
+  </nav>
+
+  <main class="content">
+    <router-outlet />
+  </main>
+
+  <app-state-inspector class="inspector-column" />
+</div>

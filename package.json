@@ -1,0 +1,34 @@
+{
+  "name": "ngrx-patterns-cookbook",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "ng serve",
+    "build": "ng build",
+    "deploy": "ng build --base-href=/ngrx-patterns-cookbook/ && npx angular-cli-ghpages --dir=dist/ngrx-patterns-cookbook/browser"
+  },
+  "dependencies": {
+    "@angular/animations": "^21.1.0",
+    "@angular/common": "^21.1.0",
+    "@angular/compiler": "^21.1.0",
+    "@angular/core": "^21.1.0",
+    "@angular/forms": "^21.1.0",
+    "@angular/platform-browser": "^21.1.0",
+    "@angular/router": "^21.1.0",
+    "@ngrx/effects": "^21.1.1",
+    "@ngrx/entity": "^21.1.1",
+    "@ngrx/store": "^21.1.1",
+    "@ngrx/store-devtools": "^21.1.1",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.6.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^21.1.0",
+    "@angular/cli": "^21.1.0",
+    "@angular/compiler-cli": "^21.1.0",
+    "angular-cli-ghpages": "^2.0.0",
+    "jsdom": "^26.0.0",
+    "typescript": "~5.9.0",
+    "vitest": "^4.0.8"
+  }
+}

@@ -1,0 +1,37 @@
+<div class="pattern-page">
+  <header>
+    <h2>02 - Optimistic Approval Workflow</h2>
+    <p class="hint">
+      Clicking "Approve" shows a saving state while waiting for the backend
+      response — the status only updates once the server confirms. If the
+      request fails, an error appears and the status stays "pending". Watch
+      the State Inspector for the sequence
+      <code>approveContract → approveContractSuccess</code> or
+      <code>approveContract → approveContractFailure</code>.
+    </p>
+  </header>
+
+  <ul class="approval-list">
+    @for (item of items(); track item.id) {
+      <li [class.saving]="item.isSaving">
+        <div class="info">
+          <span class="name">{{ item.name }}</span>
+          <span class="amount">{{ item.amount | number: '1.0-0' }} $</span>
+        </div>
+
+        <div class="action">
+          <span class="status" [class]="item.status">{{ item.status }}</span>
+          @if (item.status === 'pending') {
+            <button (click)="approve(item.id)" [disabled]="item.isSaving">
+              {{ item.isSaving ? 'Approving…' : 'Approve' }}
+            </button>
+          }
+        </div>
+
+        @if (item.error) {
+          <p class="error">{{ item.error }} - still "pending"</p>
+        }
+      </li>
+    }
+  </ul>
+</div>

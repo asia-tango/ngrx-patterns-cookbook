@@ -1,0 +1,38 @@
+<section class="pattern">
+  <h2>01 - Entity Adapter List</h2>
+  <p class="hint">
+    Contract list, normalized via <code>@ngrx/entity</code>.
+    See <code>README.md</code> in this folder - when this pattern is worth its setup cost.
+  </p>
+
+  <div class="toolbar">
+    <button (click)="reload()">Reload list</button>
+    <button class="danger" (click)="simulateFailure()">Simulate Failure</button>
+  </div>
+
+  @if (loading()) {
+    <p>Loading...</p>
+  }
+  @if (error(); as message) {
+    <p class="error-banner">
+      ⚠ {{ message }} - showing the last successfully loaded list below.
+    </p>
+  }
+
+  <p><strong>Pending total:</strong> {{ totalPending() | number }} $</p>
+
+  <table>
+    <thead>
+      <tr><th>Name</th><th>Amount</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      @for (c of contracts(); track c.id) {
+        <tr>
+          <td>{{ c.name }}</td>
+          <td>{{ c.amount | number }} $</td>
+          <td><span class="badge" [class]="c.status">{{ c.status }}</span></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</section>

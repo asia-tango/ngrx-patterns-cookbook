@@ -1,0 +1,51 @@
+.pattern-page {
+  padding: 24px;
+  max-width: 640px;
+}
+
+.hint {
+  color: #666;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+code {
+  background: #f0f0f0;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+button {
+  margin-top: 16px;
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.success {
+  margin-top: 14px;
+  color: #065f46;
+  background: #d1fae5;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.error {
+  margin-top: 14px;
+  color: #991b1b;
+  background: #fee2e2;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+}

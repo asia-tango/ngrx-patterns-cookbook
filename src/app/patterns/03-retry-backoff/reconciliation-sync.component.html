@@ -1,0 +1,40 @@
+<div class="pattern-page">
+  <header>
+    <h2>03 · Retry &amp; Backoff</h2>
+    <p class="hint">
+      Every attempt is its own <code>syncRequested</code> action with a
+      growing <code>attempt</code> number. Unlike RxJS <code>retry()</code>,
+      no attempt is hidden inside an operator - the whole chain is visible
+      in the State Inspector on the right, attempt by attempt.
+    </p>
+  </header>
+
+  <button (click)="start()" [disabled]="sync().status === 'syncing'">
+    @switch (sync().status) {
+      @case ('syncing') {
+        Attempt {{ sync().attempt }} of {{ sync().maxAttempts }}…
+      }
+      @case ('succeeded') {
+        Synced ✓ — run again
+      }
+      @case ('failed') {
+        Failed — try again
+      }
+      @default {
+        Run reconciliation
+      }
+    }
+  </button>
+
+  @if (sync().status === 'succeeded') {
+    <p class="success">
+      Reconciliation completed (attempt {{ sync().attempt }} of {{ sync().maxAttempts }}).
+    </p>
+  }
+
+  @if (sync().status === 'failed') {
+    <p class="error">
+      All {{ sync().maxAttempts }} attempts exhausted. Last error: {{ sync().error }}
+    </p>
+  }
+</div>

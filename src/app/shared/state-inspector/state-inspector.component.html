@@ -1,0 +1,33 @@
+<aside class="inspector">
+  <header>
+    <h3>State Inspector</h3>
+    <button (click)="log().length && actionLog.clear()" [disabled]="!log().length">
+      Clear
+    </button>
+  </header>
+
+  @if (!log().length) {
+    <p class="empty">No actions yet - click something on the top.</p>
+  }
+
+  <ul class="entries">
+    @for (entry of log(); track entry.id) {
+      <li>
+        <div class="row">
+          <span class="type">{{ entry.type }}</span>
+          <span class="time">{{ entry.timestamp }}</span>
+        </div>
+        @if (entry.payloadPreview !== '{}') {
+          <code class="payload">{{ entry.payloadPreview }}</code>
+        }
+      </li>
+    }
+  </ul>
+
+  @if (log().length) {
+    <details class="state-json" open>
+      <summary>Current state (latest snapshot)</summary>
+      <pre>{{ formattedState() }}</pre>
+    </details>
+  }
+</aside>

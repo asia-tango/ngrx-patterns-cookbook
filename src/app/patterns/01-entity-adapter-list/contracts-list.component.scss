@@ -1,0 +1,74 @@
+.pattern {
+  padding: 20px;
+  max-width: 640px;
+}
+
+.hint {
+  color: #666;
+  font-size: 13px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+th, td {
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+button {
+  background: #111; 
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px; cursor: pointer;
+}
+
+button.danger {
+  background: #fff;
+  color: #b91c1c;
+  border: 1px solid #b91c1c;
+}
+
+.error-banner {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin: 8px 0;
+}
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.badge.pending {
+  background: #fef3c7;
+}
+
+.badge.approved {
+  background: #d1fae5;
+}
+
+.badge.rejected {
+  background: #fee2e2;
+}
+
+.badge.draft {
+  background: #e5e7eb;
+}
+
